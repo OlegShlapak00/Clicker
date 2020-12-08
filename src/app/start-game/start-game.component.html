@@ -1,0 +1,34 @@
+<section>
+  <section class="dark radio-buttons">
+
+    <h1 class="choose-time">Choose game time</h1>
+
+    <label>
+      <input [(ngModel)]="gameTime" [value]="10" type="radio" name="dark" (change)="getBest($event,10)" checked>
+      <span class="design"></span>
+      <span class="text">10s</span>
+    </label>
+
+    <label>
+      <input [(ngModel)]="gameTime" [value]="15" type="radio" (change)="getBest($event,15)" name="dark">
+      <span class="design"></span>
+      <span class="text">15s</span>
+    </label>
+
+    <label>
+      <input [(ngModel)]="gameTime" [value]="20" type="radio" (change)="getBest($event,20)" name="dark">
+      <span class="design"></span>
+      <span class="text">20s</span>
+    </label>
+
+  </section>
+  <div>
+    <h3 class="best-score">Best Score: {{best}}</h3>
+    <h3 class="best-player">Best Player: {{bestPlayer}} </h3>
+  </div>
+
+  <div id="btn" (click)="startGame()">
+    <span class="noselect">Start Game</span>
+    <div id="circle"></div>
+  </div>
+</section>
