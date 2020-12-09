@@ -1,17 +1,14 @@
 language: node_js
 node_js:
-  - '10'
-
+- '10'
 before_install:
-  - npm install -g @angular/cli
+- npm install -g @angular/cli
 install: npm install
-
 branches:
   only:
-    - master
-
+  - master
 deploy:
   provider: heroku
-  app: "best-clicker"
+  app: best-clicker
   api_key:
-    secure: "485d9069-5c8c-4cff-8ffb-b269058ad6c8"
+    secure: eqfGhF585KqlFMuLu/3hULV/GUKjhx8iA3IkBL+L9pVWszDMGJmcDpx/AUiv2mWiqtaBDcVi9DyOw5ot1r8yeavFU8txAqQehZwick6AfNcbuM6XuFy+k0VN4HpQ3iDtZiPFDLzfG+b1nS4kVeeUPQoQgKmij9e3W+N2IpO7NFos2dP2VEZ/rA3LL+NPZP0PR7fptufEKwah3gY5/TEOKqJzi8y0Rx50AMsQkbmr93SSOpgkYSh5lnNHghuUXs67KGgWmB/g0j0xMkeC8iYKkW2Vob3wUQnYcbm6+2n1Jqk3iwo32hPPZC1WABRRlSWcrt4veyye1ggSLfro0hdo/9KN/i1U7RnKmALf53Y+Q1A51HI8AcnpT8UFPzs1q9n06gKXkALpgpDqvB6px4kVRKuUYXdiqUHq5iQKVosNfMjFZ5BlT3NynPleagxC7pMq2gE/cKq+9Zdyq2CJPq3dQVLf3cPWbOlRQbSXxFYoCYGoc+uNkGWQuZc/VOFf2qrgZGhqem19GP154euVgGRffT6eK8l70oFcyr+YS4CiAucdw4hw+1fmzmX9kTe8Ad5w3DTPGzYNsk+CCbpYuEQKqdX+LuSk/4o9RmO5kx+6NSEc76w/muM0Yb+sh83In9ze+at2A6I9M2VP8sW+t7ITKdX5urhugXFSaIHdWULbPw0=
