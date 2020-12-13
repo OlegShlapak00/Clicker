@@ -8,9 +8,9 @@ import {Router} from '@angular/router';
   styleUrls: ['./start-game.component.css']
 })
 export class StartGameComponent implements OnInit {
-  best ;
+  best;
   gameTime = 10;
-  bestPlayer ;
+  bestPlayer;
   constructor(
     private settings: GameSettingsService,
     private location: Location,
@@ -18,29 +18,29 @@ export class StartGameComponent implements OnInit {
     ) { }
   startGame(): any{
     this.settings.setTime(this.gameTime);
-    console.log(this.gameTime);
     this.router.navigate(['/started']);
   }
   ngOnInit(): void {
+    this.settings.currentDuration = 10;
     this.bestPlayer = this.settings.bestPlayer10;
-    this.best = this.settings.getBest10();
+    this.settings.getBest10().then(num => this.best = num);
   }
   getBest(event, value): any{
     switch (value){
       case 10: {
-        this.best = this.settings.getBest10();
+        this.best = this.settings.bestScore10;
         this.settings.currentDuration = 10;
         this.bestPlayer = this.settings.bestPlayer10;
         break;
       }
       case 15: {
-        this.best = this.settings.getBest15();
+        this.best = this.settings.bestScore15;
         this.settings.currentDuration = 15;
         this.bestPlayer = this.settings.bestPlayer15;
         break;
       }
       case 20: {
-        this.best = this.settings.getBest20();
+        this.best = this.settings.bestScore20;
         this.settings.currentDuration = 20;
         this.bestPlayer = this.settings.bestPlayer20;
         break;

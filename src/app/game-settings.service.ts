@@ -9,9 +9,9 @@ export class GameSettingsService {
   bestPlayer10 = 'Me';
   bestPlayer15 = 'Me';
   bestPlayer20 = 'Me';
-  bestScore10 = 0;
-  bestScore15 = 1;
-  bestScore20 = 2;
+  bestScore10 = 1;
+  bestScore15 = 2;
+  bestScore20 = 3;
   playerName;
 
   constructor() {
@@ -21,7 +21,7 @@ export class GameSettingsService {
     this.time = t;
   }
 
-  setBest10(t): any {
+   setBest10(t): any {
     if (t > this.bestScore10) {
       this.bestScore10 = t;
       this.bestPlayer10 = this.playerName;
@@ -41,11 +41,10 @@ export class GameSettingsService {
   }
 
   getTime(): number {
-    console.log(this.time);
     return this.time;
   }
 
-  getBest10(): number {
+  async getBest10(): Promise<number>{   // experiment
     return this.bestScore10;
   }
   getBest15(): number {
@@ -57,9 +56,5 @@ export class GameSettingsService {
 
   setPlayerName(t): any {
     this.playerName = t;
-  }
-
-  getPlayerName(): string {
-    return this.playerName;
   }
 }
